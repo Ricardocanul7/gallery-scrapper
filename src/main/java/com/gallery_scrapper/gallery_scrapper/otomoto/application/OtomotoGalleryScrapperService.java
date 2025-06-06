@@ -39,13 +39,13 @@ public class OtomotoGalleryScrapperService implements ScrapperService {
             for (Element galleryItem : elements) {
                 ImageDTO imageDTO = new ImageDTO();
 
-                if (!StringUtils.hasText(galleryItem.attr("src"))) {
-                }
-                imageDTO.setTitle(galleryItem.attr("title"));
-                imageDTO.setSrc(galleryItem.attr("src"));
-                imageDTO.setAlt(galleryItem.attr("alt"));
+                if (StringUtils.hasText(galleryItem.attr("src"))) {
+                    imageDTO.setTitle(galleryItem.attr("title"));
+                    imageDTO.setSrc(galleryItem.attr("src"));
+                    imageDTO.setAlt(galleryItem.attr("alt"));
 
-                imageDTOs.add(imageDTO);
+                    imageDTOs.add(imageDTO);
+                }
             }
         } catch (IOException ex) {
             System.out.println(ex);
