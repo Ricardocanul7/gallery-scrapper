@@ -24,7 +24,6 @@ public class ScrapperController {
     private final Map<String, ScrapperService> scrapperServices;
     private final Map<String, AssetsDownloaderService> assetsDownloaderServices;
 
-    @Autowired
     public ScrapperController(
             Map<String, ScrapperService> scrapperServices,
             Map<String, AssetsDownloaderService> assetsDownloaderServices) {
